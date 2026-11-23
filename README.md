@@ -1,12 +1,12 @@
-# Mounir Chemloul — Portfolio (pro)
+# Mounir Chemloul, portfolio
 
 A clean, corporate-facing portfolio where **each project lives inside its own themed environment**
 (satellite HUD, endoscopy viewport, blueprint, clinical SaaS, radar scope, topographic map, network graph).
 
 ## Stack
-- Next.js 16 (App Router) with `output: "export"` — fully static
+- Next.js 16 (App Router) with `output: "export"`, fully static
 - Hand-written CSS (`app/globals.css`), environments drawn as inline SVG + CSS
-- Fonts: Inter Variable, JetBrains Mono (Fontsource)
+- Fonts: Newsreader, IBM Plex Sans, IBM Plex Mono (Fontsource)
 
 ## Where things live
 | What | Where |

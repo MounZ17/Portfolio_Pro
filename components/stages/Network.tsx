@@ -3,7 +3,7 @@ import { Hud, Shot, type StageProps } from "./shared";
 
 const faculties = ["Computer Science", "Mathematics", "Physics", "Biology", "Chemistry", "Electronics"];
 
-/** Social platform: the university as a graph — faculties, sections, groups — around the product. */
+/** Social platform: the university as a graph (faculties, sections, groups) around the product. */
 export function Network({ project }: StageProps) {
   const { line, accent, ink } = project.theme;
   const media = project.media[0];

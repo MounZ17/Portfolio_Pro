@@ -6,10 +6,7 @@ export function Header() {
   return (
     <header className="header">
       <div className="container header__inner">
-        <Link href="/" className="brand" aria-label={`${profile.name} — home`}>
-          <span className="brand__mark" aria-hidden="true">
-            MC
-          </span>
+        <Link href="/" className="brand" aria-label={`${profile.name}, home`}>
           <span className="brand__name">{profile.name}</span>
         </Link>
         <nav className="nav" aria-label="Primary">
@@ -20,7 +17,7 @@ export function Header() {
         </nav>
         <ThemeToggle />
         <a className="btn btn--sm btn--dark" href={asset(profile.cv)} download>
-          Résumé <span aria-hidden="true">↓</span>
+          Résumé
         </a>
       </div>
     </header>

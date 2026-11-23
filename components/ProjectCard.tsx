@@ -5,7 +5,7 @@ import { Stage, themeVars } from "./stages/Stage";
 export function ProjectCard({ project, index, wide }: { project: Project; index: number; wide?: boolean }) {
   return (
     <article className={`card${wide ? " card--wide" : ""}`} style={themeVars(project)}>
-      <Link href={`/work/${project.slug}/`} className="card__link" aria-label={`${project.title} — read the case study`}>
+      <Link href={`/work/${project.slug}/`} className="card__link" aria-label={`${project.title}: read the case study`}>
         <Stage project={project} size="card" className="card__stage" />
         <div className="card__body">
           <p className="card__meta">

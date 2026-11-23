@@ -1,26 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/inter";
-import "@fontsource/jetbrains-mono/400.css";
-import "@fontsource/jetbrains-mono/500.css";
+import "@fontsource-variable/newsreader/opsz.css";
+import "@fontsource-variable/newsreader/opsz-italic.css";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-sans/400-italic.css";
+import "@fontsource/ibm-plex-sans/500.css";
+import "@fontsource/ibm-plex-sans/600.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { profile } from "@/lib/content";
 
 const description =
-  "Mounir Chemloul — AI & Software Engineer in Algiers. Computer vision, deep learning and production full-stack software. Selected work and case studies.";
+  "Mounir Chemloul is an AI and software engineer in Algiers, working on computer vision, deep learning and full-stack software.";
 
 export const metadata: Metadata = {
-  title: { default: `${profile.name} — ${profile.role}`, template: `%s · ${profile.name}` },
+  title: { default: `${profile.name} | ${profile.role}`, template: `%s | ${profile.name}` },
   description,
   authors: [{ name: profile.name }],
-  openGraph: { type: "website", title: `${profile.name} — ${profile.role}`, description },
+  openGraph: { type: "website", title: `${profile.name} | ${profile.role}`, description },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafaf8" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0d11" },
+    { media: "(prefers-color-scheme: light)", color: "#f6f4ef" },
+    { media: "(prefers-color-scheme: dark)", color: "#151412" },
   ],
 };
 

@@ -88,7 +88,7 @@ export function Blueprint({ project, uid }: StageProps) {
       {media && (
         <figure className="blueprint__print">
           <Shot src={asset(media.src)} alt="" />
-          <figcaption>FIG. 1 — SIFT correspondences, view 1 ↔ view 2</figcaption>
+          <figcaption>FIG. 1: SIFT correspondences, view 1 ↔ view 2</figcaption>
         </figure>
       )}
       <Hud tl="K · intrinsics calibrated" tr="P = K [R | t]" />

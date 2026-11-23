@@ -44,7 +44,7 @@ export interface Project {
   title: string;
   /** Where / for whom it was built. */
   context: string;
-  /** Leave empty when unknown — never guess dates. */
+  /** Leave empty when unknown. Never guess dates. */
   year: string;
   role: string;
   domain: string;
@@ -67,21 +67,21 @@ export const projects: Project[] = [
     slug: "medboard",
     title: "MedBoard",
     context: "Independent product",
-    year: "2025 – 2026",
+    year: "2025 - 2026",
     role: "Product design & full-stack engineering",
     domain: "Multi-tenant SaaS · Healthcare",
     summary:
-      "A multi-tenant SaaS for medical practices — patient intake, records, prescriptions and a live waiting room — with every clinic isolated in its own PostgreSQL schema.",
+      "A multi-tenant SaaS for medical practices: patient intake, records, prescriptions and a live waiting room, with every clinic isolated in its own PostgreSQL schema.",
     challenge:
       "In a real practice, a large share of consultation time was disappearing into paperwork. The goal: a doctor opens a patient file that is already prepared, and several clinics can share one platform without any risk of data crossing between them.",
     approach: [
       "Patients answer a symptom questionnaire before they are seen; their answers feed directly into the medical record.",
       "The doctor's workspace is built in Next.js, React and Tailwind: calendar, live waiting room, patient files, prescriptions, stock and statistics, on a Django REST API secured with JWT.",
-      "With django-tenants, every clinic lives in its own PostgreSQL schema behind its own subdomain. Even a badly filtered query cannot leak one clinic's patients into another — the database enforces the separation, not the application code.",
+      "With django-tenants, every clinic lives in its own PostgreSQL schema behind its own subdomain. Even a badly filtered query cannot leak one clinic's patients into another, because the database enforces the separation, not the application code.",
       "Clinical risk stays in view: allergies, history and ongoing treatments sit in a permanent banner on every patient file. Patient identifiers are random tokens rather than hashes that could be recomputed from someone's identity.",
     ],
     outcome:
-      "A production-ready stack shipped with Docker Compose — Postgres 16, Gunicorn, Next.js and nginx with TLS — designed and built end to end by one engineer.",
+      "A production-ready stack shipped with Docker Compose (Postgres 16, Gunicorn, Next.js and nginx with TLS), designed and built end to end by one engineer.",
     metrics: [
       { value: "1 schema", label: "per clinic, isolation enforced by the database" },
       { value: "6", label: "clinical modules in one workspace" },
@@ -100,7 +100,7 @@ export const projects: Project[] = [
       {
         src: "/media/medboard-patient-file.png",
         alt: "MedBoard patient file with a red allergies banner, ongoing treatments, history and tabs for records, prescriptions and forms",
-        caption: "The patient file — allergies, ongoing treatments and history stay pinned above every tab. Demo data; all patients are fictional.",
+        caption: "The patient file. Allergies, ongoing treatments and history stay pinned above every tab. Demo data; all patients are fictional.",
         wide: true,
       },
       {
@@ -132,16 +132,16 @@ export const projects: Project[] = [
     slug: "urban-change-detection",
     title: "Urban Change Detection",
     context: "Algerian Space Agency (ASAL) · M.Sc. thesis",
-    year: "2022 – 2023",
+    year: "2022 - 2023",
     role: "Deep learning research & engineering",
     domain: "Remote sensing · Deep learning",
     summary:
       "Detecting what changed in a city between two satellite images, with a Siamese VGG-16 and attention that outperforms the baseline on every test pair.",
     challenge:
-      "Given two aerial images of the same place taken years apart, identify exactly which pixels changed — new buildings, cleared land, new roads — reliably enough to support urban monitoring.",
+      "Given two aerial images of the same place taken years apart, identify exactly which pixels changed (new buildings, cleared land, new roads) reliably enough to support urban monitoring.",
     approach: [
       "Built and benchmarked two architectures on SYSU-CD, a dataset of 20,000 aerial image pairs at 0.5 m per pixel.",
-      "The first fine-tunes Xception as a change classifier. The second — the strongest — is a Siamese VGG-16 feature extractor sharpened by CBAM channel-and-spatial attention.",
+      "The first fine-tunes Xception as a change classifier. The second, and the strongest, is a Siamese VGG-16 feature extractor sharpened by CBAM channel-and-spatial attention.",
       "A Euclidean distance map compares the two dates, and deep supervision (DSLayer) guides training at several depths of the network.",
     ],
     outcome:
@@ -186,16 +186,16 @@ export const projects: Project[] = [
     slug: "gi-lesion-detection",
     title: "GI Lesion Detection",
     context: "USTHB · M.Sc. research implementation",
-    year: "2021 – 2022",
+    year: "2021 - 2022",
     role: "Computer vision engineering",
     domain: "Medical imaging · Computer vision",
     summary:
-      "Implementing a published research pipeline that isolates disease regions — ulcers, bleeding, polyps — in wireless capsule endoscopy images.",
+      "Implementing a published research pipeline that isolates disease regions (ulcers, bleeding, polyps) in wireless capsule endoscopy images.",
     challenge:
-      "Reproduce Sharif et al. (2019), which detects gastrointestinal diseases in capsule endoscopy frames by fusing deep CNN features with geometric ones — starting from the paper's equations, not from an existing library.",
+      "Reproduce Sharif et al. (2019), which detects gastrointestinal diseases in capsule endoscopy frames by fusing deep CNN features with geometric ones. I started from the paper's equations, not from an existing library.",
     approach: [
       "Contrast stretching, top-hat and bottom-hat morphology bring out bright and dark structures; a median filter removes noise.",
-      "The image moves to CIELAB, where statistics on the a/b chrominance planes — fused, then thresholded by mean deviation and conditional probability — separate lesions from healthy tissue.",
+      "The image moves to CIELAB, where statistics on the a/b chrominance planes are fused, then thresholded by mean deviation and conditional probability to separate lesions from healthy tissue.",
       "For each segmented lesion, geometric descriptors (area, major and minor axes, orientation, eccentricity) build the feature matrix consumed by the classifier.",
     ],
     outcome:
@@ -237,7 +237,7 @@ export const projects: Project[] = [
     summary:
       "From two photographs to a 3D point cloud: camera calibration, SIFT matching, epipolar geometry and triangulation in Python.",
     challenge:
-      "Recover the 3D structure of an object from just two photographs — with every step of the geometry made explicit rather than hidden behind a black-box reconstruction tool.",
+      "Recover the 3D structure of an object from just two photographs, with every step of the geometry made explicit rather than hidden behind a black-box reconstruction tool.",
     approach: [
       "Checkerboard shots calibrate the camera, recovering its intrinsic matrix and distortion coefficients.",
       "On a stereo pair, SIFT keypoints are matched with a brute-force matcher filtered by Lowe's ratio test.",
@@ -261,7 +261,7 @@ export const projects: Project[] = [
       {
         src: "/media/3d-comparaison.jpeg",
         alt: "Two photos of a dragon figurine joined by hundreds of coloured lines between matching SIFT keypoints",
-        caption: "SIFT correspondences between the two views — the raw material for triangulation.",
+        caption: "SIFT correspondences between the two views, which is the raw material for triangulation.",
         wide: true,
       },
     ],
@@ -370,13 +370,13 @@ export const projects: Project[] = [
     slug: "usthbook",
     title: "USTHBook",
     context: "USTHB · B.Sc. thesis",
-    year: "2020 – 2021",
+    year: "2020 - 2021",
     role: "Full-stack web development",
     domain: "Education · Web",
     summary:
       "An education-focused social network shaped like the university itself, for students, teachers and administrators.",
     challenge:
-      "Communication between teachers and students was scattered across channels. The idea: a social network whose structure mirrors the university — every faculty, section and group gets its own feed.",
+      "Communication between teachers and students was scattered across channels. The idea: a social network whose structure mirrors the university, so every faculty, section and group gets its own feed.",
     approach: [
       "Modelled the system in UML: use cases for students, teachers and administrators, sequence diagrams and the relational schema.",
       "Built with Django and MySQL behind a Semantic UI front end: profiles, section and group feeds, posts and private messaging.",
@@ -394,7 +394,7 @@ export const projects: Project[] = [
     media: [
       {
         src: "/media/usthbook.png",
-        alt: "USTHBook landing page reading 'Bienvenue sur USTHBook — Le réseau social de l'USTHB'",
+        alt: "USTHBook landing page reading 'Bienvenue sur USTHBook, le réseau social de l'USTHB'",
         caption: "The landing page.",
       },
     ],
@@ -426,9 +426,9 @@ export interface Role {
 
 export const experience: Role[] = [
   {
-    org: "Algérie Poste — Headquarters",
+    org: "Algérie Poste (Headquarters)",
     title: "AI & Software Engineer",
-    period: "Nov 2023 — Present",
+    period: "Nov 2023 - now",
     location: "Algiers",
     points: [
       "AI-powered anti-money-laundering prototype improving detection of suspicious transactions",
@@ -442,7 +442,7 @@ export const experience: Role[] = [
   {
     org: "Algerian Space Agency (ASAL)",
     title: "Deep Learning Intern",
-    period: "Sep 2022 — Jul 2023",
+    period: "Sep 2022 - Jul 2023",
     location: "Algiers",
     points: ["Urban change detection from Earth-observation imagery with deep learning"],
     project: "urban-change-detection",
@@ -450,8 +450,8 @@ export const experience: Role[] = [
 ];
 
 export const education = [
-  { degree: "M.Sc. Computer Science — Visual Computing", school: "USTHB", period: "2021 — 2023" },
-  { degree: "B.Sc. Computer Science", school: "USTHB", period: "2017 — 2021" },
+  { degree: "M.Sc. Computer Science, Visual Computing", school: "USTHB", period: "2021 - 2023" },
+  { degree: "B.Sc. Computer Science", school: "USTHB", period: "2017 - 2021" },
 ];
 
 export const expertise: { area: string; items: string[] }[] = [

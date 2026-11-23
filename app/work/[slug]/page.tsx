@@ -136,7 +136,7 @@ export default async function CaseStudy({ params }: PageProps<"/work/[slug]">) {
                   ))}
                 </ul>
               ) : (
-                <p className="muted">Private codebase — a walkthrough is available on request.</p>
+                <p className="muted">The code is private, but I can walk you through it on request.</p>
               )}
             </section>
           </aside>

@@ -7,26 +7,25 @@ export default function Home() {
   const [featured, ...rest] = projects;
   return (
     <>
-      {/* ——— Intro ——— */}
       <section className="hero container">
         <div className="hero__text">
-          <p className="eyebrow">
-            <span className="status" aria-hidden="true" /> {profile.role} · {profile.location}
+          <p className="hero__where">
+            {profile.role}, based in {profile.location}
           </p>
           <h1 className="hero__title">
-            I build computer-vision models <span className="dim">and the production software around them.</span>
+            I train computer-vision models, then build the software that <em>puts them to use.</em>
           </h1>
           <p className="hero__lede">
-            AI engineer at Algérie Poste headquarters, delivering prototypes for compliance, customer flow and access
-            control. Background in deep learning research at the Algerian Space Agency and full-stack product
-            development.
+            I work at Algérie Poste headquarters, building prototypes for compliance, customer flow and access control.
+            Before that I did deep learning research at the Algerian Space Agency, and I also build full-stack products
+            like MedBoard.
           </p>
           <div className="hero__actions">
             <Link className="btn btn--dark" href="/#work">
-              View selected work
+              See my work
             </Link>
             <a className="btn btn--ghost" href={`mailto:${profile.email}`}>
-              Get in touch
+              Email me
             </a>
           </div>
         </div>
@@ -34,31 +33,29 @@ export default function Home() {
         <aside className="facts" aria-label="At a glance">
           <dl>
             <div>
-              <dt>Current</dt>
+              <dt>Now</dt>
               <dd>
                 AI & Software Engineer
-                <small>Algérie Poste — Headquarters</small>
+                <small>Algérie Poste, Headquarters</small>
               </dd>
             </div>
             <div>
-              <dt>Previously</dt>
+              <dt>Before</dt>
               <dd>
                 Deep Learning Intern
                 <small>Algerian Space Agency (ASAL)</small>
               </dd>
             </div>
             <div>
-              <dt>Education</dt>
+              <dt>Studied</dt>
               <dd>
                 M.Sc. Computer Science
-                <small>Visual Computing · USTHB</small>
+                <small>Visual Computing, USTHB</small>
               </dd>
             </div>
           </dl>
           <div className="facts__index">
-            <p className="facts__label">
-              {projects.length} projects · {projects.length} environments
-            </p>
+            <p className="facts__label">Projects</p>
             <ul>
               {projects.map((p) => (
                 <li key={p.slug} style={themeVars(p)}>
@@ -74,14 +71,12 @@ export default function Home() {
         </aside>
       </section>
 
-      {/* ——— Work ——— */}
       <section id="work" className="section container" aria-labelledby="work-title">
         <header className="section__head">
-          <p className="eyebrow">Selected work</p>
-          <h2 id="work-title">Each project, in its own environment.</h2>
+          <h2 id="work-title">Selected work</h2>
           <p className="section__lede">
-            Satellite imagery, clinical software, radar scopes, engineering drawings — every case study is framed by the
-            world it was built for. Open one for the problem, the approach and the results.
+            Some of it research, some of it production. Each project is drawn in the setting it was built for, from
+            satellite imagery to radar scopes. Open one to read about the problem, what I did and how it turned out.
           </p>
         </header>
         <div className="grid">
@@ -92,11 +87,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ——— Experience ——— */}
       <section id="experience" className="section container" aria-labelledby="xp-title">
         <header className="section__head">
-          <p className="eyebrow">Experience</p>
-          <h2 id="xp-title">Where I&apos;ve worked.</h2>
+          <h2 id="xp-title">Experience</h2>
         </header>
         <ol className="timeline">
           {experience.map((r) => {
@@ -109,7 +102,7 @@ export default function Home() {
                 </div>
                 <div className="timeline__what">
                   <h3>
-                    {r.title} <span className="timeline__org">· {r.org}</span>
+                    {r.title} <span className="timeline__org">at {r.org}</span>
                   </h3>
                   <ul>
                     {r.points.map((pt) => (
@@ -118,7 +111,7 @@ export default function Home() {
                   </ul>
                   {linked && (
                     <Link className="inline-link" href={`/work/${linked.slug}/`} style={themeVars(linked)}>
-                      <span className="swatch" aria-hidden="true" /> Case study: {linked.title} →
+                      <span className="swatch" aria-hidden="true" /> Read the {linked.title} case study
                     </Link>
                   )}
                 </div>
@@ -133,7 +126,7 @@ export default function Home() {
               </div>
               <div className="timeline__what">
                 <h3>
-                  {e.degree} <span className="timeline__org">· {e.school}</span>
+                  {e.degree} <span className="timeline__org">at {e.school}</span>
                 </h3>
               </div>
             </li>
@@ -141,11 +134,9 @@ export default function Home() {
         </ol>
       </section>
 
-      {/* ——— Expertise ——— */}
       <section id="expertise" className="section container" aria-labelledby="skills-title">
         <header className="section__head">
-          <p className="eyebrow">Expertise</p>
-          <h2 id="skills-title">From model to production.</h2>
+          <h2 id="skills-title">What I work with</h2>
         </header>
         <div className="skills">
           {expertise.map((g) => (
@@ -159,16 +150,20 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <p className="skills__soft">Also: leadership, mentoring interns, hackathon organisation, technical communication.</p>
+        <p className="skills__soft">
+          Away from the keyboard, I mentor interns on their final-year projects and helped organise the InnovPost
+          Hackathon.
+        </p>
       </section>
 
-      {/* ——— Contact ——— */}
       <section id="contact" className="contact" aria-labelledby="contact-title">
         <div className="container contact__inner">
           <div>
-            <p className="eyebrow eyebrow--light">Contact</p>
-            <h2 id="contact-title">Have a role or a project in mind?</h2>
-            <p>I&apos;m happy to talk about AI engineering, computer vision and full-stack product work.</p>
+            <h2 id="contact-title">Get in touch</h2>
+            <p>
+              Email is the best way to reach me. I&apos;m always happy to talk about AI engineering, computer vision or
+              full-stack product work.
+            </p>
           </div>
           <div className="contact__actions">
             <a className="btn btn--light" href={`mailto:${profile.email}`}>
@@ -176,13 +171,13 @@ export default function Home() {
             </a>
             <div className="contact__row">
               <a className="btn btn--outline-light" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-                LinkedIn ↗
+                LinkedIn
               </a>
               <a className="btn btn--outline-light" href={profile.github} target="_blank" rel="noopener noreferrer">
-                GitHub ↗
+                GitHub
               </a>
               <a className="btn btn--outline-light" href={asset(profile.cv)} download>
-                Résumé ↓
+                Résumé (PDF)
               </a>
             </div>
           </div>
